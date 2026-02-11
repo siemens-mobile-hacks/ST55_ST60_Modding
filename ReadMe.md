@@ -1,8 +1,8 @@
 # Siemens ST55/ST60 Modding
 
-These ODM phones, manufactured by Quanta Computer, can now be patched just like original Siemens-platform phones!
+The Siemens ST55/ST60 (ODM by Quanta Computer) can now be patched like original Siemens-platform phones.
 
-[![ST55 Patched Photo 01](img/ST55_Patched_01_Thumb.jpg)](img/ST55_Patched_01.jpg) [![ST55 Patched Photo 02](img/ST55_Patched_02_Thumb.jpg)](img/ST55_Patched_02.jpg)
+[![ST55 Patched Photo 02](img/ST55_Patched_02_Thumb.jpg)](img/ST55_Patched_02.jpg) [![ST55 Patched Photo 01](img/ST55_Patched_01_Thumb.jpg)](img/ST55_Patched_01.jpg)
 
 ## Requirements
 
