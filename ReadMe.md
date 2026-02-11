@@ -16,10 +16,10 @@ These ODM phones, manufactured by Quanta Computer, can now be patched just like 
 ## Patching Recipe
 
 1. Create a full 16 MB (8+8 MB) `BackUp.mot` dump of your ST55/ST60 phone using the Milano BackUp Tool.
-2. Decrypt the dump using the `MotTool.py` utility:
+2. Decrypt the dump using the `MotCipher.py` utility:
 
     ```sh
-    python MotTool.py BackUp.mot BackUp_Dec.mot decrypt
+    python MotCipher.py BackUp.mot BackUp_Dec.mot decrypt
     ```
 
 3. Use the [HxD Hex Editor](https://mh-nexus.de/en/hxd/) to convert the `BackUp_Dec.mot` S-Record file into binary chunks.
@@ -41,12 +41,34 @@ These ODM phones, manufactured by Quanta Computer, can now be patched just like 
 6. Encrypt the `Chunk.mot` file so the phone/flasher can recognize it:
 
     ```sh
-    python MotTool.py Chunk.mot Chunk_Enc.mot encrypt
+    python MotCipher.py Chunk.mot Chunk_Enc.mot encrypt
     ```
 
 7. Replace the corresponding block in the original crypted `BackUp.mot` file with your `Chunk_Enc.mot` data. You can use [Notepad++](https://notepad-plus-plus.org/) or any text editor that handles large S-Record files.
 
 8. Flash the modified file back to the device using the Milano BackUp Tool.
+
+## Graphic Patches
+
+1. Open the firmware binary file in [Image Search Editor v2.09](TODO) or a similar bitmap searching program.
+2. Find and save image to the bitmap, including the offset address in the filename for reference.
+3. Rename the file extension to `.data` and import it into [GIMP](https://www.gimp.org/) using a 120x160 resolution and the RGB565 (Big-Endian) format.
+4. Edit the image as desired, then apply a Vertical Flip.
+5. Export the file as a BMP image using the raw RGB565 format with no extra color space information.
+6. Remove the BMP header using a Hex Editor to leave only the raw pixel data.
+7. Swap the bytes in the resulting raw bitmap using the `MotSwap.py` utility:
+
+    ```sh
+    python MotSwap.py 0x01004000.bmp 0x01004000.bin
+    ```
+
+8. Re-insert the `0x01004000.bin` data into the firmware binary and prepare the final patch.
+
+## Tools & Scripts
+
+* `MotRec.py`: Converts binary files into Motorola S-Record format.
+* `MotCipher.py`: Encrypts and decrypts Motorola S-Record files.
+* `MotSwap.py`: Performs byte-swapping to correct the endianness of raw RGB565 bitmap images (without BMP header).
 
 ## Theory
 
