@@ -2,16 +2,21 @@
 
 These ODM phones, manufactured by Quanta Computer, can now be patched just like original Siemens-platform phones!
 
-![Siemens ST55 with patch](img/Siemens_ST55_Patched.jpg)
+[![ST55 Patched Photo 01](ST55_Patched_01_Thumb.jpg)](img/ST55_Patched_01.jpg) [![ST55 Patched Photo 02](ST55_Patched_02_Thumb.jpg)](img/ST55_Patched_02.jpg)
 
 ## Requirements
 
 1. A functional USB <=> RS-232 serial cable compatible with the ST55/ST60.
 
-    *TODO: Verify and document pinout.*
+    [![ST55/ST60 Cable Pinout](ST55_ST60_Cable_Pinout_Thumb.jpg)](img/ST55_ST60_Cable_Pinout.png)
 
-2. [FTDI Driver](TODO) for the ST55/ST60 cable.
-3. [Milano BackUp Tool v4.11](TODO) software.
+    ST55/ST60 pinout description (in Russian): [stuff/Pinout_ST55_ST60_ru_Ru.txt](stuff/Pinout_ST55_ST60_ru_Ru.txt)
+
+2. [Milano BackUp Tool v4.11](stuff/MilanoBackUpTool_v4.11.zip) software with FTDI Driver for the ST55/ST60 cable.
+
+## Flashing Recipe
+
+[![Magazine Page 01](ST_Page_01_Thumb.jpg)](img/ST_Page_01.png) [![Magazine Page 02](ST_Page_02_Thumb.jpg)](img/ST_Page_02.png) [![Magazine Page 03](ST_Page_03_Thumb.jpg)](img/ST_Page_03.png) [![Magazine Page 04](ST_Page_04_Thumb.jpg)](img/ST_Page_04.png) [![Magazine Page 05](ST_Page_05_Thumb.jpg)](img/ST_Page_05.png)
 
 ## Patching Recipe
 
@@ -74,7 +79,7 @@ These ODM phones, manufactured by Quanta Computer, can now be patched just like 
 
 The Milano BackUp Tool utilizes a simple encryption method for its S-Record files.
 
-[![Crypto Method](Crypto_Method_Thumb.png)](img/Crypto_Method.png)
+[![Crypto Method](Crypto_Method_Thumb.jpg)](img/Crypto_Method.png)
 
 The encryption logic involves appending each byte with its positional index within a `0x00...0x0F` range, which also encompasses the checksum.
 
