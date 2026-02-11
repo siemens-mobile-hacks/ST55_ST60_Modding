@@ -75,7 +75,7 @@ The Siemens ST55/ST60 (ODM by Quanta Computer) can now be patched like original 
 * `MotCipher.py`: Encrypts and decrypts Motorola S-Record files.
 * `MotSwap.py`: Performs byte-swapping to correct the endianness of raw RGB565 bitmap images (without BMP header).
 
-## Theory
+## Dec/Enc S-Record Theory
 
 The Milano BackUp Tool utilizes a simple encryption method for its S-Record files.
 
@@ -84,6 +84,34 @@ The Milano BackUp Tool utilizes a simple encryption method for its S-Record file
 The encryption logic involves appending each byte with its positional index within a `0x00...0x0F` range, which also encompasses the checksum.
 
 The crypto algorithm was obtained by analyzing the memory dump of the Milano BackUp Tool process dumped by the [Process Explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) program.
+
+## Software Information (ST55)
+
+Mimicry of MMI for Siemens phones UX/UI on top of AMX 4-Thumb RTOS Kernel by KADAK.
+
+## Hardware Information (ST55)
+
+[![Hardware Photos](img/hw/ST55_Hardware_All.jpg)](img/hw)
+*Thanks to **alexa_ufo** for these photos!*
+
+* SoC: Analog Devices AD6525ACA
+    * MCU: 32-bit ARM7TDMI-S @ 39 MHz, LE
+    * DSP: 16-bit N/A, @ 78 MIPS
+    * IRAM: `0x40000000...0x40400000` ?
+* Flash: Toshiba TH50VPF5782/83AASB
+    * RAM: >= 4M, `0x08000000...0x08400000` ?
+    * ROM: >= 16M (8 + 8 MB) NOR 
+    * ROM0 (CODE): `0x01000000...0x01800000`
+    * ROM1 (FFS): `0x20000000...0x207F0000`
+* Music: Yamaha YMU762 MA-3 Mobile Audio 3
+* ADC/DAC: Analog Devices AD6521ACA
+* PowerIC: Analog Devices ADI ADP3522A
+* Display/Camera: Epson S1D13719 @ 512K VRAM
+* RF Transceiver: SKYWORKS CX74017-16
+
+## IDA Pro Reverse Engineering Database
+
+* [ST55_RANGE1_CODE.bin.i64](https://firmware.center/projects/EXL/Siemens/ST55/ST55_RANGE1_CODE.bin.i64)
 
 ## Credits
 
