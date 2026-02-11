@@ -1,4 +1,4 @@
-# Siemens ST55/ST60 Modding Kitchen
+# Siemens ST55/ST60 Modding
 
 These ODM phones, manufactured by Quanta Computer, can now be patched just like original Siemens-platform phones!
 
@@ -50,7 +50,7 @@ These ODM phones, manufactured by Quanta Computer, can now be patched just like 
 
 ## Graphic Patches
 
-1. Open the firmware binary file in [Image Search Editor v2.09](TODO) or a similar bitmap searching program.
+1. Open the firmware binary file in [Image Search Editor v2.09](https://forum.motofan.ru/index.php?act=Attach&type=post&id=278169) or a similar bitmap searching program.
 2. Find and save image to the bitmap, including the offset address in the filename for reference.
 3. Rename the file extension to `.data` and import it into [GIMP](https://www.gimp.org/) using a 120x160 resolution and the RGB565 (Big-Endian) format.
 4. Edit the image as desired, then apply a Vertical Flip.
@@ -74,9 +74,11 @@ These ODM phones, manufactured by Quanta Computer, can now be patched just like 
 
 The Milano BackUp Tool utilizes a simple encryption method for its S-Record files.
 
-![Crypto Method](img/Crypto_Method.png)
+[![Crypto Method](Crypto_Method_Thumb.png)](img/Crypto_Method.png)
 
 The encryption logic involves appending each byte with its positional index within a `0x00...0x0F` range, which also encompasses the checksum.
+
+The crypto algorithm was obtained by analyzing the memory dump of the Milano BackUp Tool process dumped by the [Process Explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) program.
 
 ## Credits
 
