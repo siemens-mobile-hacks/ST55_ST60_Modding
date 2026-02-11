@@ -87,12 +87,13 @@ The crypto algorithm was obtained by analyzing the memory dump of the Milano Bac
 
 ## Software Information (ST55)
 
-Mimicry of MMI for Siemens phones UX/UI on top of AMX 4-Thumb RTOS Kernel by KADAK.
+MMI (UI) of ST55/ST60 mimics the UX/UI of Siemens E-GOLD/S-GOLD phones but built on top of the AMX 4-Thumb RTOS Kernel by KADAK not Nucleus RTOS by Accelerated Technology (ATI).
 
 ## Hardware Information (ST55)
 
 [![Hardware Photos](img/hw/ST55_Hardware_All.jpg)](img/hw)
-*Thanks to **alexa_ufo** for these photos!*
+
+*Thanks to **alexa_ufo** (Alexandra) for these photos!*
 
 * SoC: Analog Devices AD6525ACA
     * MCU: 32-bit ARM7TDMI-S @ 39 MHz, LE
